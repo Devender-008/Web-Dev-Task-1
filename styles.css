@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section */
+.company-header {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #4a5d9d;
+    color: white;
+}
+
+.company-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.company-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Team Section */
+.team-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #4a5d9d; 
+    position: relative;
+    font-weight: 700;
+}
+
+.team-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #4a5d9d;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Team Category */
+.team-category {
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-category.founders {
+    border-left: 5px solid #e53e3e; /* Red for Leadership */
+}
+
+.team-category.development {
+    border-left: 5px solid #48bb78; /* Green for Development */
+}
+
+.team-category.sales-marketing {
+    border-left: 5px solid #f6ad55; /* Orange for Sales & Marketing */
+}
+
+.category-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Team Members */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.member {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 200px;
+}
+
+.member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.member img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    width: 100px;
+    height: 100px;
+}
+
+.member h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.member p {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+/* Founders Layer */
+.team-category.founders .team-members {
+    justify-content: space-evenly;
+}
+
+.team-category.founders .member {
+    flex: 1 1 45%; 
+}
+
+/* Development Team Layer */
+.team-category.development .team-lead {
+    flex: 1 1 100%; 
+}
+
+.team-category.development .engineers .member {
+    flex: 1 1 22%; 
+}
+
+/* Sales & Marketing Team Layer */
+.team-category.sales-marketing .team-lead {
+    flex: 1 1 100%;
+}
+
+.team-category.sales-marketing .sales-officers .member,
+.team-category.sales-marketing .marketing-officers .member {
+    flex: 1 1 22%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-category.founders .member,
+    .team-category.development .engineers .member,
+    .team-category.sales-marketing .sales-officers .member,
+    .team-category.sales-marketing .marketing-officers .member {
+        flex: 1 1 100%; /* Single column on smaller screens */
+    }
+}
+
+@media (max-width: 1200px) {
+    .member {
+        max-width: 160px;
+        padding: 1.5rem 1rem;
+    }
+}
